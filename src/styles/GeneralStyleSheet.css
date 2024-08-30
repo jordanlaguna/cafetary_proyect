@@ -1,0 +1,145 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/08/2024, 1:25:34 PM
+    Author     : jorda
+*/
+
+.contaClient{
+    -fx-background-color: #80808040;
+    -fx-background-radius: 6px;
+    -fx-border-color: grey;
+   -fx-border-radius: 10;
+}
+
+.AnchorPrice{
+   -fx-background-color: #80808040;
+   -fx-background-radius: 6px; 
+   -fx-border-color: grey;
+   -fx-border-radius: 10;
+}
+.AnchorPrice .shadow{
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.5), 8,0,0,0)
+}
+
+
+
+
+.text1{
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0; /* Solo el borde inferior */
+    -fx-background-color: transparent;
+    -fx-border-radius: 1;
+    -fx-border: gone;
+    -fx-text-fill: grey;
+    -fx-padding: 12 12 1 11; /* Ajustar el espaciado */
+
+}
+
+.text1:focused {
+    -fx-background-color: #F1F3F4;
+    -fx-effect: dropshadow(three-pass-box,#f2f2f2, 10, 0, 0, 0);
+    
+}
+
+.slider .text{
+    visibility: hidden;
+}
+
+.btnAdd{
+    -fx-background-radius: 15;
+    -fx-background-color: #008f39;
+    -fx-text-fill:white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 2);
+    -fx-padding: 10 20; 
+    -fx-border-width: 2; 
+    -fx-border-radius: 15;
+}
+.btnAdd:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
+    -fx-translate-y: 3; 
+    -fx-cursor: hand;
+}
+.btnPay{
+    -fx-background-radius: 15;
+    -fx-background-color:  blue;
+    -fx-text-fill:white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 2);
+    -fx-padding: 10 20; 
+    -fx-border-width: 2; 
+    -fx-border-radius: 15;
+}
+.btnPay:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
+    -fx-translate-y: 3; 
+    -fx-cursor: hand;
+}
+.btnCanc{
+    -fx-background-radius: 15;
+    -fx-background-color:  red;
+    -fx-text-fill:white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 2);
+    -fx-padding: 10 20; 
+    -fx-border-width: 2; 
+    -fx-border-radius: 15;
+}
+.btnCanc:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
+    -fx-translate-y: 3; 
+    -fx-cursor: hand;
+}
+.btnBills{
+    -fx-background-radius: 15;
+    -fx-background-color:  grey;
+    -fx-text-fill:white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 2);
+    -fx-padding: 10 20; 
+    -fx-border-width: 2; 
+    -fx-border-radius: 15;
+}
+.btnBills:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
+    -fx-translate-y: 3; 
+    -fx-cursor: hand;
+}
+
+#column_action {
+    -fx-alignment: CENTER;
+}
+
+.textHome{
+ -fx-effect: dropshadow(gaussian, rgba(0, 200, 0, 1.0), 30, 0.2, 0, 0);
+}
+.menuItem{
+    -fx-background-color: transparent;
+}
+.menuItem .text{
+    -fx-effect: dropshadow(gaussian, rgba(0, 200, 0, 1.0), 30, 0.2, 0, 0);
+}
+.menuItem .text:hover{
+    -fx-background-color: #e4e2e2;
+}
+.menuItem .text:focused{
+    -fx-cursor: hand;
+}
+.button.delete-button {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-radius:50;
+}
+
+.button.delete-button .image-view {
+    -fx-padding: 10;  
+    -fx-fit-width: 10px; 
+    -fx-fit-height: 10px; 
+}
+
+.button.delete-button:hover {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1); 
+    -fx-translate-y: 1;
+}

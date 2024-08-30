@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Cafeteria_Pan.jnlp">
+  <information>
+    <title>Cafeteria_Pan</title>
+    <vendor>jorda</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Cafeteria_Pan.jar" size="480036" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Cafeteria_Pan" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="cafeteria_pan.Cafeteria_Pan"  name="Cafeteria_Pan" />
+  <update check="always"/>
+</jnlp>

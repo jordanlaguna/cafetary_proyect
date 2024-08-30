@@ -1,0 +1,159 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21/08/2024, 11:51:59 AM
+    Author     : jorda
+*/
+#olvidoContrasena{
+    -fx-underline: true;
+}
+#olvidoContrasena:hover{
+    -fx-cursor: hand;
+}
+#paneInfo{
+    -fx-background-color: linear-gradient(to top left, #c9c9c9, #008f39);
+}
+.button-collapsed {
+    -fx-pref-width: 50px;
+    -fx-min-width: 50px;
+    -fx-max-width: 50px;
+}
+#iniciarSesion:hover{
+    -fx-text-fill: #C70808; 
+    -fx-border-color: #007bff; 
+}
+#registrarUsuario:hover{
+    -fx-text-fill: #C70808; 
+    -fx-border-color: #007bff; 
+}
+
+.textField{
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #cd1719;
+}
+.textField1{
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+    -fx-font-family: "Times New Roman";
+}
+.textField1:hover{
+    -fx-cursor: hand;
+}
+.LoadScreen{
+     -fx-background-color: linear-gradient(to top left, #c9c9c9, #008f39);
+}
+.progressBar {
+    -fx-accent: #008f39;
+}
+.progressIndicator {
+    -fx-accent: #008f39;
+}
+.sidebarItem{
+    -fx-background-color: #F2F2F2;
+}
+.sidebarItem:hover{
+    -fx-background-color: #e4e2e2;
+    -fx-border-color: #008f39;
+    -fx-border-width: 0px 0px 0px 3px;
+    -fx-cursor: hand;
+}
+.border{
+    -fx-border-color: #e4e2e2;
+    -fx-border-width: 0px 2px 0px 0px;
+}
+.btnregi{
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-background-color: #d9d9d9;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);
+    -fx-border-color: #008f39;
+    -fx-border-width: 1px 1px 1px 1px;
+}
+.btnregi:hover{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
+    -fx-translate-y: 3; 
+}
+.btnregi:hover{
+    -fx-cursor: hand;
+}
+.btnregi1{
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-background-color: green;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+}
+.btnregi1:hover{
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-background-color: #008f39;  
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+}
+.btnregi1:hover, btnregi:hover {
+    -fx-cursor: hand;
+}
+
+.btnPass{
+    -fx-background-color: white;
+    -fx-border-width: 2;
+    -fx-border-color: black;
+    -fx-border-radius: 10;    
+    -fx-background-radius: 10;
+
+}
+
+.btnPass:hover{
+    -fx-background-color: linear-gradient(to top left, #c9c9c9);    
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 2);
+}
+
+.textPass{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #cd1719;
+    -fx-background-color: white;
+    -fx-font-size: 18px;
+    -fx-font-family: "Times New Roman";
+}
+.textPass:hover{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 1); 
+}
+.table-view {
+    -fx-background-color: #008f39;
+    -fx-background-radius:7 7 0 0;
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+.table-view .column-header-background{
+    -fx-background-color: #008f39;
+    -fx-background-radius:7;
+    -fx-background-insets: 0 0 5 0;
+
+}
+.table-view .column-header, .table-view .filler{
+    -fx-size:40px;
+    -fx-border-width: 0 0 10 0;
+    -fx-background-color:transparent;
+    -fx-text-alignment: left;
+
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white ;
+    -fx-font-size: 13px;
+    -fx-font-family: "Times New Roman";
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+}
+.selected {
+    -fx-background-color: #e4e2e2;
+    -fx-border-color: #008f39;
+    -fx-border-width: 0px 0px 0px 3px;
+}

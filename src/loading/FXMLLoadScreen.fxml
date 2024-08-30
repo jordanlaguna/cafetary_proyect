@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="LoadScreen" fx:id="ScreenPane" prefHeight="500.0" prefWidth="779.0" styleClass="LoadScreen" stylesheets="@../styles/LoginStyleSheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loading.FXMLLoadScreenController">
+   <children>
+      <Separator layoutX="100.0" layoutY="32.0" orientation="VERTICAL" prefHeight="437.0" prefWidth="6.0" style="-fx-background-color: white;" />
+      <Separator layoutX="14.0" layoutY="367.0" prefHeight="7.0" prefWidth="752.0" style="-fx-background-color: white;" />
+      <Label layoutX="243.0" layoutY="32.0" text="Cafetería Pan">
+         <font>
+            <Font name="Bookman Old Style" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="626.0" layoutY="338.0" text="Versión 1.0">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
+      <ProgressBar id="progressBar" fx:id="progressBar" layoutX="264.0" layoutY="264.0" prefHeight="27.0" prefWidth="273.0" progress="0.0" stylesheets="@../styles/LoginStyleSheet.css" />
+      <Label layoutX="264.0" layoutY="297.0" text="Iniciando aplicación...">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="115.0" layoutY="382.0" text="©2024 InfoTec-CafeteríaPan">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="161.0" fitWidth="172.0" layoutX="320.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logoTienda.png" />
+         </image>
+      </ImageView>
+      <ProgressIndicator id="progressIndicator" fx:id="loading" layoutX="539.0" layoutY="261.0" progress="0.0" stylesheets="@../styles/LoginStyleSheet.css" />
+   </children>
+</AnchorPane>

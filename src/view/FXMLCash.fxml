@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="822.0" stylesheets="@../styles/GeneralStyleSheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLCashController">
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="15.0" prefHeight="108.0" prefWidth="769.0">
+         <children>
+            <HBox prefHeight="214.0" prefWidth="758.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="214.0" prefWidth="390.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="49.0" prefWidth="390.0" spacing="12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label text="Código:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="2.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txt_numLoan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="37.0" prefWidth="200.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css">
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="58.0" prefWidth="279.0" spacing="12.0">
+                           <children>
+                              <Label text="Precio:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="23.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txt_numLoan1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="37.0" prefWidth="210.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="214.0" prefWidth="379.0">
+                     <children>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="49.0" prefWidth="200.0" spacing="12.0">
+                           <children>
+                              <Label text="Descripción:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txt_name" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="37.0" prefWidth="209.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css">
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="52.0" prefWidth="379.0" spacing="12.0">
+                           <children>
+                              <Label text="Cantidad:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txt_email" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="37.0" prefWidth="240.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css">
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="contaClient" />
+         </styleClass>
+      </AnchorPane>
+      <TextField fx:id="txt_search" layoutX="33.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" onKeyTyped="#search" prefHeight="37.0" prefWidth="277.0" promptText="Buscar" style="-fx-border-color: #008f39; -fx-background-radius: 5; -fx-border-radius: 5;">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </TextField>
+      <VBox layoutX="33.0" layoutY="189.0" prefHeight="214.0" prefWidth="769.0">
+         <children>
+            <TableView fx:id="tbw_libros" layoutX="84.0" layoutY="210.0" prefHeight="214.0" prefWidth="733.0" stylesheets="@../styles/LoginStyleSheet.css">
+               <columns>
+                  <TableColumn fx:id="column_id" prefWidth="31.0" text="N°" visible="false" />
+                  <TableColumn fx:id="column_numLoan" prefWidth="77.0" text="Código" />
+                  <TableColumn fx:id="colum_dateLoan" prefWidth="131.0" text="Descripción" />
+                  <TableColumn fx:id="column_dateReturn" prefWidth="117.0" text="Precio" />
+                  <TableColumn fx:id="column_editorial" prefWidth="110.0" text="Cantidad" />
+                  <TableColumn fx:id="column_observations" minWidth="0.0" prefWidth="115.0" text="Observaciones" />
+                  <TableColumn fx:id="column_fullName" minWidth="0.0" prefWidth="207.0" text="Precio Total" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <Button graphicTextGap="6.0" layoutX="33.0" layoutY="436.0" mnemonicParsing="false" onAction="#btn_add" prefHeight="42.0" prefWidth="135.0" styleClass="btnPay" stylesheets="@../styles/GeneralStyleSheet.css" text="Pagar">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/metodo-de-pago.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane layoutX="532.0" layoutY="414.0" prefHeight="129.0" prefWidth="270.0" styleClass="AnchorPrice" stylesheets="@../styles/GeneralStyleSheet.css" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="414.0">
+         <children>
+            <VBox layoutX="-3.0" layoutY="-1.0" prefHeight="129.0" prefWidth="277.0">
+               <children>
+                  <HBox prefHeight="34.0" prefWidth="277.0">
+                     <children>
+                        <Label text="Precio:">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txt_numLoan11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="32.0" prefWidth="200.0" promptText="₡ " styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css">
+                           <HBox.margin>
+                              <Insets left="4.0" top="1.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="277.0">
+                     <children>
+                        <Label text="IVA:">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txt_numLoan111" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="32.0" prefWidth="214.0" promptText="₡ " styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css">
+                           <HBox.margin>
+                              <Insets left="4.0" top="1.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="43.0" prefWidth="277.0">
+                     <children>
+                        <Label text="Precio Total:">
+                           <font>
+                              <Font name="Times New Roman" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txt_numLoan1111" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="32.0" prefWidth="158.0" promptText="₡ " styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css">
+                           <HBox.margin>
+                              <Insets left="4.0" top="1.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Button graphicTextGap="6.0" layoutX="340.0" layoutY="436.0" mnemonicParsing="false" onAction="#btn_add" prefHeight="42.0" prefWidth="143.0" styleClass="btnBills" stylesheets="@../styles/GeneralStyleSheet.css" text="Imprimir">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/cuenta.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button graphicTextGap="6.0" layoutX="178.0" layoutY="436.0" mnemonicParsing="false" onAction="#btn_add" prefHeight="42.0" prefWidth="150.0" styleClass="btnCanc" stylesheets="@../styles/GeneralStyleSheet.css" text="Cancelar">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/error.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button graphicTextGap="6.0" layoutX="327.0" layoutY="139.0" mnemonicParsing="false" onAction="#btn_add" prefHeight="42.0" prefWidth="135.0" styleClass="btnAdd" stylesheets="@../styles/GeneralStyleSheet.css" text="Agregar">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/boton-mas.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
