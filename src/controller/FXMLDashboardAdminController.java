@@ -148,6 +148,15 @@ public class FXMLDashboardAdminController implements Initializable {
     private void openCoffee(MouseEvent event) {
         resetAllSelections();
         btnCoffee.getStyleClass().add("selected");
+         try {
+            // Cargar la vista del dashboard al inicio
+            Parent root = FXMLLoader.load(getClass().getResource(
+                    "/view/FXMLCoffes.fxml"));
+            containerMenu.getChildren().clear(); // 
+            containerMenu.getChildren().add(root); //
+        } catch (IOException ex) {
+            System.out.println("" + ex);
+        }
     }
 
     @FXML

@@ -60,7 +60,20 @@ and open the template in the editor.
 }
 .btnAdd:hover {
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
-    -fx-translate-y: 3; 
+    -fx-translate-y: 1; 
+    -fx-cursor: hand;
+}
+.btnAddCoffe{
+    -fx-background-radius: 10;
+    -fx-background-color: #008f39;
+    -fx-text-fill:white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 2);
+    -fx-border-width: 2; 
+    -fx-border-radius: 10;
+}
+.btnAddCoffe:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
+    -fx-translate-y: 1; 
     -fx-cursor: hand;
 }
 .btnPay{
@@ -142,4 +155,14 @@ and open the template in the editor.
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 1); 
     -fx-translate-y: 1;
+}
+
+.image-container {
+    -fx-alignment: center; 
+}
+
+.image-view {
+    -fx-margin: auto; 
+    -fx-fit-width: 100%;
+    -fx-fit-height: 100%; 
 }
