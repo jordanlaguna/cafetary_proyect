@@ -33,7 +33,7 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label text="Capuccino" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="77.0" text="Capuccino" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -55,7 +55,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-height: 100%; -fx-fit-width: 100%;">
                                              <image>
-                                                <Image url="@../image/capu600x600.jpeg" />
+                                                <Image url="@../image/coffes/capu600x600.jpeg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -91,7 +91,7 @@
                                  <children>
                                     <HBox prefHeight="21.0" prefWidth="129.0">
                                        <children>
-                                          <Label text="Negro" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="61.0" text="Negro" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -113,7 +113,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/cafeNegro.jpg" />
+                                                <Image url="@../image/coffes/cafeNegro.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -175,7 +175,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/cafe-leche.jpg" />
+                                                <Image url="@../image/coffes/cafe-leche.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -234,7 +234,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/mocachino.jpg" />
+                                                <Image url="@../image/coffes/mocachino.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -271,7 +271,7 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="73.0" text="Capuccino" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="73.0" text="Espresso" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -293,7 +293,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/capu600x600.jpeg" />
+                                                <Image url="@../image/coffes/espresso.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -330,7 +330,7 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="74.0" text="Negro" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="78.0" text="Americano" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -352,7 +352,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/cafeNegro.jpg" />
+                                                <Image url="@../image/coffes/americano.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -389,7 +389,7 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="79.0" text="Café-leche" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="79.0" text="Macchiato" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -411,7 +411,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/cafe-leche.jpg" />
+                                                <Image url="@../image/coffes/macchiato.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -448,7 +448,7 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label text="Mocaccino" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="73.0" text="Mocha" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -470,7 +470,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/mocachino.jpg" />
+                                                <Image url="@../image/coffes/mocha.jpeg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -507,7 +507,7 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label text="Capuccino" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="73.0" text="Cortado" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -529,7 +529,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/capu600x600.jpeg" />
+                                                <Image url="@../image/coffes/cortado.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -566,7 +566,7 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label text="Negro" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="71.0" text="Irlandés" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -588,7 +588,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/cafeNegro.jpg" />
+                                                <Image url="@../image/coffes/irlandés.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -625,7 +625,7 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="79.0" text="Café-leche" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="79.0" text="Affogato" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -647,7 +647,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/cafe-leche.jpg" />
+                                                <Image url="@../image/coffes/Affogato.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -684,7 +684,7 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label text="Mocaccino" textFill="#bf1717">
+                                          <Label prefHeight="19.0" prefWidth="83.0" text="Latte" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -706,7 +706,7 @@
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../image/mocachino.jpg" />
+                                                <Image url="@../image/coffes/latte.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>

@@ -5,9 +5,15 @@
  */
 package controller;
 
+import classes.User;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -16,6 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -94,19 +101,19 @@ public class FXMLLoginController implements Initializable {
     @FXML
     private Button btn_exit1;
 
-    /*Connection conn = null;
+    Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    */
+    
     @FXML
     private AnchorPane containerLogin;
     /**
-    * FXML Controller class
-    *
-    * @author jorda
+     * FXML Controller class
+     *
+     * @author jorda
      * @param url url
      * @param rb rb
-    */
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cmbType.getItems().addAll("Administrador", "Empleado");
@@ -237,43 +244,39 @@ public class FXMLLoginController implements Initializable {
 
         }));
     }
+
     /**
-     * 
+     *
      * @param event is event of login
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void Login(ActionEvent event) throws IOException {
-        buttonInicio.getScene().getWindow().hide();
-                Parent root = FXMLLoader.load(getClass().getResource(""
-                        + "/view/FXMLDashboardAdmin.fxml"));
-                Stage mainStage = new Stage();
-                Scene scene = new Scene(root);
-                mainStage.setScene(scene);
-                Image icon = new Image(getClass().getResourceAsStream("/image/logoTienda.png"));
-                mainStage.getIcons().add(icon);
-                mainStage.setTitle("Cafetería Pan");
-                mainStage.show();
-        /*String email = emailLogin.getText();
+        String email = emailLogin.getText();
         String password = passwordLogin.getText();
         String type = (String) cmbBox.getValue();
 
-        User user = new User(0,null, null, null, null, null,0, 0, email,
+        User user = new User(0, null, null, null, null, null, 0, 0, email,
                 password, type);
         boolean loginSuccessful = user.login(email, password, type);
         try {
             if (loginSuccessful) {
                 buttonInicio.getScene().getWindow().hide();
                 Parent root = FXMLLoader.load(getClass().getResource(""
-                        + "/vista/FXMLDashboardAdmin.fxml"));
+                        + "/view/FXMLDashboardAdmin.fxml"));
                 Stage mainStage = new Stage();
                 Scene scene = new Scene(root);
                 mainStage.setScene(scene);
-                Image icon = new Image(getClass().getResourceAsStream(""
-                        + "/img/bibliotecaenlinea.png"));
+                Image icon = new Image(getClass().getResourceAsStream("/image/"
+                        + "login/logoTienda.png"));
                 mainStage.getIcons().add(icon);
-                mainStage.setTitle("Biblioteca Admin");
+                mainStage.setTitle("Cafetería Pan");
                 mainStage.show();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Información");
+                alert.setContentText("Bienvenido de nuevo! "+ email);
+                alert.showAndWait();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
@@ -289,17 +292,17 @@ public class FXMLLoginController implements Initializable {
                     + "ingrese los datos en la caja de texto. " + e);
             alert.showAndWait();
         }
-    */
 
     }
+
     /**
-     * 
+     *
      * @param event event of register
-     * @throws SQLException 
+     * @throws SQLException
      */
     @FXML
     private void registrarUser(ActionEvent event) throws SQLException {
-        /*LocalDate localDate = birthDay.getValue();
+        LocalDate localDate = birthDay.getValue();
         Date dateOfBirth = Date.valueOf(localDate);
         User user = new User(0,dateOfBirth, identification.getText(),
                 name.getText(), lastName.getText(), secondName.getText(),
@@ -307,10 +310,12 @@ public class FXMLLoginController implements Initializable {
                 passwordRegis.getText(), cmbType.getValue().toString());
         user.registrarse();
         cleanData();
-        */
+         
     }
-    /**{
-     * 
+
+    /**
+     * {
+     *
      * @param event event for the button
      */
     @FXML
@@ -329,12 +334,13 @@ public class FXMLLoginController implements Initializable {
         passwordRegis.clear();
         cmbType.setValue(null);
     }
+
     /**
-     * 
+     *
      * @param event is event forgotPassword
-     * @throws IOException 
+     * @throws IOException
      */
-    
+
     @FXML
     private void lb_olvidar(MouseEvent event) throws IOException {
         // Regresa al inicio LOGIN 
@@ -353,7 +359,7 @@ public class FXMLLoginController implements Initializable {
 
         Stage myStage = (Stage) this.containerLogin.getScene().getWindow();
         myStage.close();
-*/
+         */
 
     }
 }

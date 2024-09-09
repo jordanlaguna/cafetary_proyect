@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -23,6 +24,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -112,7 +115,7 @@ public class FXMLDashboardAdminController implements Initializable {
     private void openUsers(MouseEvent event) {
         resetAllSelections();
         btnUsers.getStyleClass().add("selected");
-        try {
+         try {
             // Cargar la vista del dashboard al inicio
             Parent root = FXMLLoader.load(getClass().getResource(
                     "/view/FXMLUsers.fxml"));
@@ -124,7 +127,21 @@ public class FXMLDashboardAdminController implements Initializable {
     }
 
     @FXML
-    private void loginBack(ActionEvent event) {
+    private void loginBack(ActionEvent event) throws IOException {
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/view"
+                + "/FXMLLogin.fxml"));
+        Parent root = loader.load();
+        FXMLLoginController ac = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
+        stage.setOnCloseRequest(e -> {
+        });
+
+        Stage myStage = (Stage) this.paneDash.getScene().getWindow();
+        myStage.close();
     }
 
     @FXML
@@ -163,12 +180,28 @@ public class FXMLDashboardAdminController implements Initializable {
     private void openDessert(MouseEvent event) {
         resetAllSelections();
         btnDessert.getStyleClass().add("selected");
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource(
+            "/view/FXMLDessert.fxml"
+            ));
+            containerMenu.getChildren().clear();
+            containerMenu.getChildren().add(root);
+        } catch(IOException ex){
+            System.out.println(""+ ex);
+        }
     }
 
     @FXML
-    private void openMilkShake(MouseEvent event) {
+    private void openMilkShake(MouseEvent event) throws IOException {
         resetAllSelections();
         btnMilkShake.getStyleClass().add("selected");
+        try{
+        Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLMilkShake.fxml"));
+        containerMenu.getChildren().clear();
+        containerMenu.getChildren().add(root);
+        } catch (IOException ex){
+            System.out.println("" + ex);
+        }
     }
 
     @FXML

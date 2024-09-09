@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -22,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="containerLogin" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLLoginController">
+<AnchorPane fx:id="containerLogin" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLLoginController">
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: white;">
          <children>
@@ -35,7 +28,7 @@
                   </Label>
                   <ImageView fitHeight="286.0" fitWidth="290.0" layoutX="47.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../image/logoTienda.png" />
+                        <Image url="@../image/login/logoTienda.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="buttonRegis" layoutX="77.0" layoutY="456.0" mnemonicParsing="false" onMouseClicked="#iniciarSesion" prefHeight="69.0" prefWidth="225.0" styleClass="btnregi1" stylesheets="@../Style/LoginStyleSheet.css" text="Iniciar Sesión" textFill="WHITE">
@@ -62,7 +55,7 @@
                   </Label>
                   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="261.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../image/control-de-acceso.png" />
+                        <Image url="@../image/login/control-de-acceso.png" />
                      </image>
                   </ImageView>
                   <Button id="buttonRegistrarse" fx:id="buttonRegister" layoutX="189.0" layoutY="562.0" mnemonicParsing="false" onAction="#registrarUser" prefHeight="53.0" prefWidth="195.0" styleClass="btnregi" stylesheets="@../styles/LoginStyleSheet.css" text="Registrarse">
@@ -143,12 +136,12 @@
                   </HBox>
                   <ImageView fx:id="iconLogin" fitHeight="43.0" fitWidth="40.0" layoutX="435.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../image/correo-electronico.png" />
+                        <Image url="@../image/login/correo-electronico.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="iconPass" fitHeight="46.0" fitWidth="46.0" layoutX="430.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../image/candado.png" />
+                        <Image url="@../image/login/candado.png" />
                      </image>
                   </ImageView>
                   <Label id="olvidoContrasena" fx:id="forgotPassword" alignment="CENTER_RIGHT" layoutX="166.0" layoutY="437.0" onMouseClicked="#lb_olvidar" prefHeight="40.0" prefWidth="258.0" stylesheets="@../styles/LoginStyleSheet.css" text="Olvidaste tú contraseña?">
@@ -181,7 +174,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../image/boton.png" />
+                              <Image url="@../image/login/boton.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -190,7 +183,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../image/boton.png" />
+                              <Image url="@../image/login/boton.png" />
                            </image>
                         </ImageView>
                      </graphic>

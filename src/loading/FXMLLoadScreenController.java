@@ -62,7 +62,7 @@ public class FXMLLoadScreenController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLLogin.fxml"));
                 Stage stage2 = new Stage();
                 Scene scene = new Scene(root);
-                Image icon = new Image(getClass().getResourceAsStream("/image/logoTienda.png"));
+                Image icon = new Image(getClass().getResourceAsStream("/image/login/logoTienda.png"));
                 stage2.getIcons().add(icon);
                 stage2.setTitle("Inicio De Sesión");
                 stage2.setScene(scene);

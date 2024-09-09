@@ -22,7 +22,7 @@ public class Cafeteria_Pan extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/loading/FXMLLoadScreen.fxml"));
-        Image icon = new Image(getClass().getResourceAsStream("/image/logoTienda.png"));
+        Image icon = new Image(getClass().getResourceAsStream("/image/login/logoTienda.png"));
         stage.getIcons().add(icon);
         Scene scene = new Scene(root);
         stage.setTitle("Iniciando aplicación");
