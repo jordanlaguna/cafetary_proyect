@@ -33,12 +33,12 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="77.0" text="Tiramisú" textFill="#bf1717">
+                                          <Label fx:id="lblName1" prefHeight="19.0" prefWidth="77.0" text="Tiramisú" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="23.0" prefWidth="54.0" text="₡ 1500">
+                                          <Label fx:id="lblPrice1" prefHeight="23.0" prefWidth="54.0" text="₡ 1500">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -51,7 +51,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image1" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-height: 100%; -fx-fit-width: 100%;">
                                              <image>
@@ -62,7 +62,7 @@
                                     </StackPane>
                                     <HBox prefHeight="39.0" prefWidth="145.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner1" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -91,12 +91,12 @@
                                  <children>
                                     <HBox prefHeight="21.0" prefWidth="129.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="61.0" text="Churros" textFill="#bf1717">
+                                          <Label fx:id="lblName2" prefHeight="19.0" prefWidth="61.0" text="Churros" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="23.0" prefWidth="54.0" text="₡ 1000">
+                                          <Label fx:id="lblPrice2" prefHeight="23.0" prefWidth="54.0" text="₡ 1000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -109,7 +109,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image2" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -120,7 +120,7 @@
                                     </StackPane>
                                     <HBox prefHeight="40.0" prefWidth="145.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner2" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -150,7 +150,7 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="84.0" text="Flan-Caram" textFill="#bf1717">
+                                          <Label fx:id="lblName3" prefHeight="19.0" prefWidth="84.0" text="Flan-Caram" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -158,7 +158,7 @@
                                                 <Insets />
                                              </HBox.margin>
                                           </Label>
-                                          <Label prefHeight="19.0" prefWidth="47.0" text="₡ 1000">
+                                          <Label fx:id="lblPrice3" prefHeight="19.0" prefWidth="47.0" text="₡ 1000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -171,7 +171,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image3" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -182,7 +182,7 @@
                                     </StackPane>
                                     <HBox prefHeight="45.0" prefWidth="137.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner3" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -212,12 +212,12 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label text="Tar. Queso" textFill="#bf1717">
+                                          <Label fx:id="lblName4" text="Tar. Queso" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
+                                          <Label fx:id="lblPrice4" prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -230,7 +230,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image4" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -241,7 +241,7 @@
                                     </StackPane>
                                     <HBox prefHeight="39.0" prefWidth="149.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner4" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -271,12 +271,12 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="91.0" text="Tres Leches" textFill="#bf1717">
+                                          <Label fx:id="lblName5" prefHeight="19.0" prefWidth="91.0" text="Tres Leches" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="21.0" prefWidth="59.0" text="₡ 1500">
+                                          <Label fx:id="lblPrice5" prefHeight="21.0" prefWidth="59.0" text="₡ 1500">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -289,7 +289,7 @@
                                           <Insets left="10.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image5" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -300,7 +300,7 @@
                                     </StackPane>
                                     <HBox prefHeight="39.0" prefWidth="145.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner5" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -330,7 +330,7 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="99.0" text="Tor. Chilena" textFill="#bf1717">
+                                          <Label fx:id="lblName6" prefHeight="19.0" prefWidth="99.0" text="Tor. Chilena" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -338,7 +338,7 @@
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                           </Label>
-                                          <Label prefHeight="21.0" prefWidth="61.0" text="₡ 1000">
+                                          <Label fx:id="lblPrice6" prefHeight="21.0" prefWidth="61.0" text="₡ 1000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -348,7 +348,7 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image6" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -359,7 +359,7 @@
                                     </StackPane>
                                     <HBox prefHeight="40.0" prefWidth="145.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner6" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -389,12 +389,12 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="97.0" text="P. Zanahoria" textFill="#bf1717">
+                                          <Label fx:id="lblName7" prefHeight="19.0" prefWidth="97.0" text="P. Zanahoria" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="19.0" prefWidth="59.0" text="₡ 1000">
+                                          <Label fx:id="lblPrice7" prefHeight="19.0" prefWidth="59.0" text="₡ 1000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -407,7 +407,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image7" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -418,7 +418,7 @@
                                     </StackPane>
                                     <HBox prefHeight="45.0" prefWidth="134.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner7" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -448,12 +448,12 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="73.0" text="Brownie" textFill="#bf1717">
+                                          <Label fx:id="lblName8" prefHeight="19.0" prefWidth="73.0" text="Brownie" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
+                                          <Label fx:id="lblPrice8" prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -466,7 +466,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image8" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -477,7 +477,7 @@
                                     </StackPane>
                                     <HBox prefHeight="39.0" prefWidth="149.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner8" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -507,12 +507,12 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="107.0" text="M. Chocolate" textFill="#bf1717">
+                                          <Label fx:id="lblName9" prefHeight="19.0" prefWidth="107.0" text="M. Chocolate" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="21.0" prefWidth="63.0" text="₡ 1500">
+                                          <Label fx:id="lblPrice9" prefHeight="21.0" prefWidth="63.0" text="₡ 1500">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -525,7 +525,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image9" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -536,7 +536,7 @@
                                     </StackPane>
                                     <HBox prefHeight="39.0" prefWidth="145.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner9" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -566,12 +566,12 @@
                                  <children>
                                     <HBox prefHeight="23.0" prefWidth="145.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="95.0" text="P. Chocolate" textFill="#bf1717">
+                                          <Label fx:id="lblName10" prefHeight="19.0" prefWidth="95.0" text="P. Chocolate" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="23.0" prefWidth="54.0" text="₡ 1000">
+                                          <Label fx:id="lblPrice10" prefHeight="23.0" prefWidth="54.0" text="₡ 1000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -584,7 +584,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image10" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -595,7 +595,7 @@
                                     </StackPane>
                                     <HBox prefHeight="40.0" prefWidth="145.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner10" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -625,12 +625,12 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="77.0" text="C. brûlée" textFill="#bf1717">
+                                          <Label fx:id="lblName11" prefHeight="19.0" prefWidth="77.0" text="C. brûlée" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="19.0" prefWidth="53.0" text="₡ 1000">
+                                          <Label fx:id="lblPrice11" prefHeight="19.0" prefWidth="53.0" text="₡ 1000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -643,7 +643,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image11" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -654,7 +654,7 @@
                                     </StackPane>
                                     <HBox prefHeight="45.0" prefWidth="137.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner11" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>
@@ -684,12 +684,12 @@
                                  <children>
                                     <HBox prefHeight="26.0" prefWidth="158.0">
                                        <children>
-                                          <Label prefHeight="19.0" prefWidth="83.0" text="Donas" textFill="#bf1717">
+                                          <Label fx:id="lblName12" prefHeight="19.0" prefWidth="83.0" text="Donas" textFill="#bf1717">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
+                                          <Label fx:id="lblPrice12" prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
                                              <font>
                                                 <Font name="Times New Roman" size="16.0" />
                                              </font>
@@ -702,7 +702,7 @@
                                           <Insets left="5.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <StackPane prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
+                                    <StackPane fx:id="image12" prefHeight="83.0" prefWidth="145.0" styleClass="image-container" stylesheets="@../styles/GeneralStyleSheet.css">
                                        <children>
                                           <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -713,7 +713,7 @@
                                     </StackPane>
                                     <HBox prefHeight="39.0" prefWidth="149.0">
                                        <children>
-                                          <Spinner prefHeight="25.0" prefWidth="57.0">
+                                          <Spinner fx:id="Spinner12" prefHeight="25.0" prefWidth="57.0">
                                              <HBox.margin>
                                                 <Insets top="3.0" />
                                              </HBox.margin>

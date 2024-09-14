@@ -1,0 +1,16 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/09/2024, 12:21:46 PM
+    Author     : jorda
+*/
+
+.PaneForm{
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-border-color: black;
+   -fx-border-radius: 10px;
+}
