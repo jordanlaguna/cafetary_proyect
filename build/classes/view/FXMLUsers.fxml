@@ -77,7 +77,6 @@
                               <TableColumn fx:id="column_idUser" prefWidth="25.0" text="N°" visible="false" />
                               <TableColumn fx:id="column_correo" prefWidth="107.0" text="Correo" />
                               <TableColumn fx:id="column_password" prefWidth="93.0" text="Contraseña" />
-                              <TableColumn fx:id="column_type" prefWidth="106.0" text="Tipo" />
                              
                                                         </columns>
                            <columnResizePolicy>
@@ -205,12 +204,6 @@
                                     <Font name="Times New Roman" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="66.0" layoutY="124.0" prefHeight="20.0" prefWidth="127.0" text="Seleccione tipo:" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="66.0">
-                                 <font>
-                                    <Font name="Times New Roman" size="18.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox fx:id="cmbType" layoutX="46.0" layoutY="144.0" prefHeight="37.0" prefWidth="157.0" promptText="Seleccionar" styleClass="comboBox" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="39.0" />
                            </children>
                         </AnchorPane>
                      </children>

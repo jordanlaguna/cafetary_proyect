@@ -70,8 +70,7 @@ public class ConnectionLoginDB {
                     rs.getString("secondName"),
                     Integer.parseInt(rs.getString("telephone")),
                     Integer.parseInt(rs.getString("id_user")),
-                    rs.getString("correo"), rs.getString("password"),
-                    rs.getString("type")));
+                    rs.getString("correo"), rs.getString("password")));
             addLoginToList(rs, list);
         }
     }

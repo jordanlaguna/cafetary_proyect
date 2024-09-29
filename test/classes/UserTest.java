@@ -85,18 +85,6 @@ public class UserTest {
     }
 
     /**
-     * Test of getType method, of class User.
-     */
-    @Test
-    public void testGetType() {
-        System.out.println("getType");
-        User instance = new User();
-        String expResult = "";
-        String result = instance.getType();
-        assertEquals("", "");
-    }
-
-    /**
      * Test of setId_user method, of class User.
      */
     @Test
@@ -132,14 +120,7 @@ public class UserTest {
     /**
      * Test of setType method, of class User.
      */
-    @Test
-    public void testSetType() {
-        System.out.println("setType");
-        String type = "";
-        User instance = new User();
-        instance.setType(type);
 
-    }
 
     /**
      * Test of login method, of class User.
@@ -149,10 +130,9 @@ public class UserTest {
         System.out.println("login");
         String email = "";
         String password = "";
-        String type = "";
         User instance = new User();
         boolean expResult = false;
-        boolean result = instance.login(email, password, type);
+        boolean result = instance.login(email, password);
         assertEquals(expResult, result);
 
     }

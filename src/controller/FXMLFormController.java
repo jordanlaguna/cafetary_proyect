@@ -33,9 +33,10 @@ public class FXMLFormController implements Initializable {
     @FXML
     private Button btnModif;
 
-    private String imagePath;  
-    private Coffe currentCoffe; 
+    private String imagePath;
+    private Coffe currentCoffe;
     private FXMLCoffesController coffesController;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         imagePicker.setOnMouseClicked(event -> chooseImage());
@@ -126,10 +127,22 @@ public class FXMLFormController implements Initializable {
                 ps.setString(3, imagePath);
             }
 
-            ps.setInt(4, currentCoffe.getId()); // Usa el ID del café para modificarlo
+            ps.setInt(4, currentCoffe.getId());
 
-            ps.executeUpdate();
-            System.out.println("Café modificado correctamente.");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("CONFIRMACIÓN");
+            alert.setContentText("¿Deseas modificar los datos?");
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if (option.get().equals(ButtonType.OK)) {
+                ps.executeUpdate();
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("INFORMACIÓN");
+                alert.setContentText("Café modificado con éxito.");
+                alert.showAndWait();
+            }
 
             // Actualizar la lista en el controlador principal
             coffesController.refreshCoffees();

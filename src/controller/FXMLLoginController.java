@@ -69,7 +69,6 @@ public class FXMLLoginController implements Initializable {
     private Button buttonRegister;
     @FXML
     private Button buttonInicio;
-    @FXML
     private ComboBox cmbBox;
     @FXML
     private ImageView iconLogin;
@@ -87,7 +86,6 @@ public class FXMLLoginController implements Initializable {
     private TextField name;
     @FXML
     private DatePicker birthDay;
-    @FXML
     private ComboBox cmbType;
     @FXML
     private TextField telephone;
@@ -116,8 +114,6 @@ public class FXMLLoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        cmbType.getItems().addAll("Administrador", "Empleado");
-        cmbBox.getItems().addAll("Administrador", "Empleado");
 
         // Desplazar paneUno para mostrar el formulario de inicio de sesión
         TranslateTransition slide = new TranslateTransition();
@@ -134,7 +130,6 @@ public class FXMLLoginController implements Initializable {
         buttonLogin.setVisible(true);
         forgotPassword.setVisible(true);
         buttonInicio.setVisible(true);
-        cmbBox.setVisible(true);
         iconLogin.setVisible(true);
         iconPass.setVisible(true);
         btn_exit1.setVisible(true);
@@ -153,7 +148,6 @@ public class FXMLLoginController implements Initializable {
         birthDay.setVisible(false);
         telephone.setVisible(false);
         userName.setVisible(false);
-        cmbType.setVisible(false);
         btn_exit.setVisible(false);
 
         slide.setOnFinished((e -> {
@@ -177,7 +171,6 @@ public class FXMLLoginController implements Initializable {
         buttonLogin.setVisible(true);
         forgotPassword.setVisible(true);
         buttonInicio.setVisible(true);
-        cmbBox.setVisible(true);
         iconLogin.setVisible(true);
         iconPass.setVisible(true);
         btn_exit1.setVisible(true);
@@ -196,7 +189,6 @@ public class FXMLLoginController implements Initializable {
         birthDay.setVisible(false);
         telephone.setVisible(false);
         userName.setVisible(false);
-        cmbType.setVisible(false);
         btn_exit.setVisible(false);
 
         slide.setOnFinished((e -> {
@@ -220,7 +212,6 @@ public class FXMLLoginController implements Initializable {
         buttonLogin.setVisible(false);
         forgotPassword.setVisible(false);
         buttonInicio.setVisible(false);
-        cmbBox.setVisible(false);
         iconLogin.setVisible(false);
         iconPass.setVisible(false);
         btn_exit1.setVisible(false);
@@ -237,7 +228,6 @@ public class FXMLLoginController implements Initializable {
         birthDay.setVisible(true);
         telephone.setVisible(true);
         userName.setVisible(true);
-        cmbType.setVisible(true);
         btn_exit.setVisible(true);
 
         slide.setOnFinished((e -> {
@@ -254,11 +244,10 @@ public class FXMLLoginController implements Initializable {
     private void Login(ActionEvent event) throws IOException {
         String email = emailLogin.getText();
         String password = passwordLogin.getText();
-        String type = (String) cmbBox.getValue();
 
         User user = new User(0, null, null, null, null, null, 0, 0, email,
-                password, type);
-        boolean loginSuccessful = user.login(email, password, type);
+                password);
+        boolean loginSuccessful = user.login(email, password);
         try {
             if (loginSuccessful) {
                 buttonInicio.getScene().getWindow().hide();
@@ -307,7 +296,7 @@ public class FXMLLoginController implements Initializable {
         User user = new User(0,dateOfBirth, identification.getText(),
                 name.getText(), lastName.getText(), secondName.getText(),
                 Integer.parseInt(telephone.getText()),0, userName.getText(),
-                passwordRegis.getText(), cmbType.getValue().toString());
+                passwordRegis.getText());
         user.registrarse();
         cleanData();
          

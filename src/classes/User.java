@@ -23,7 +23,6 @@ public class User extends Person {
     private int id_user;
     private String email;
     private String password;
-    private String type;
 
     /**
      * @param id_person To request the id_person
@@ -43,13 +42,12 @@ public class User extends Person {
      */
     public User(int id_person, Date birth_date, String identification,
             String name, String lastName, String secondName, int telephone,
-            int id_user, String email, String password, String type) {
+            int id_user, String email, String password) {
         super(id_person, birth_date, identification, name, lastName, secondName,
                 telephone);
         this.id_user = id_user;
         this.email = email;
         this.password = password;
-        this.type = type;
     }
 
     public User() {
@@ -68,10 +66,6 @@ public class User extends Person {
         return password;
     }
 
-    public String getType() {
-        return type;
-    }
-
     public void setId_user(int id_user) {
         this.id_user = id_user;
     }
@@ -84,35 +78,29 @@ public class User extends Person {
         this.password = password;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public boolean login(String email, String password, String type) {
+    public boolean login(String email, String password) {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         conn = ConnectionLoginDB.conn();
-        String sql = "select * from user where email = ? and password = ? "
-                + "and type = ?";
+        String sql = "select * from user where email = ? and password = ? ";
 
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, this.email);
             ps.setString(2, this.password);
-            ps.setString(3, this.type);
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                if ("Admin".equals(this.type)) {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setHeaderText(null);
-                    alert.setTitle("INFORMACIÓN");
-                    alert.setContentText("Bienvenido administrador "
-                            + getEmail());
-                    alert.showAndWait();
-                }
                 return true;
+            } else {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("ERROR");
+                alert.setContentText("Correo o contraseña incorrectos.");
+                alert.showAndWait();
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -156,13 +144,12 @@ public class User extends Person {
             }
 
             // Insertar en la tabla "user"
-            String sqlUser = "insert into user (id_user, email, password, type)"
-                    + " values (?, ?, ?, ?)";
+            String sqlUser = "insert into user (id_user, email, password)"
+                    + " values (?, ?, ?)";
             ps2 = conn.prepareStatement(sqlUser);
             ps2.setInt(1, idPerson); //Usar el ID de persona como ID de usuario
             ps2.setString(2, this.getEmail());
             ps2.setString(3, this.getPassword());
-            ps2.setString(4, this.getType());
             ps2.executeUpdate();
 
             conn.commit();

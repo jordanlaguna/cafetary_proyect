@@ -337,7 +337,7 @@ public class FXMLDessertController implements Initializable {
     private void assignDessertToLabelAndImage(Dessert dessert, Label nameLabel,
             Label priceLabel, StackPane imagePane) {
         nameLabel.setText(dessert.getName());
-        priceLabel.setText("" + dessert.getPrice());
+        priceLabel.setText("₡" + dessert.getPrice());
         ImageView imageView = new ImageView(new Image(new File(dessert.
                 getImage()).toURI().toString()));
         imageView.setFitWidth(110);

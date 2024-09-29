@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Cafeteria_Pan.jar" size="3127839" download="eager" />
+    <jar href="Cafeteria_Pan.jar" size="3145697" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.29.jar" size="2519547" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Cafeteria_Pan" >

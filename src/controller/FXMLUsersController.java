@@ -57,7 +57,6 @@ public class FXMLUsersController implements Initializable {
     private TextField txt_email;
     @FXML
     private TextField txt_password;
-    @FXML
     private ComboBox cmbType;
     @FXML
     private TextField txt_search;
@@ -87,8 +86,7 @@ public class FXMLUsersController implements Initializable {
     private TableColumn<User, String> column_correo;
     @FXML
     private TableColumn<User, String> column_password;
-    @FXML
-    private TableColumn<User, String> column_type;
+
     private ObservableList<User> users = FXCollections.observableArrayList();
     @FXML
     private TextField txt_idPerson;
@@ -106,8 +104,7 @@ public class FXMLUsersController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        cmbType.getItems().addAll("Admin", "Empleado");
+       
         loadData();
     }
 
@@ -157,10 +154,7 @@ public class FXMLUsersController implements Initializable {
 
                     return true;
                 }
-                if (User.getType().toLowerCase().indexOf(tipoTexto) != -1) {
-
-                    return true;
-                }
+              
                 return false;
             });
             SortedList<User> sortedList = new SortedList<>(filterData);
@@ -181,7 +175,6 @@ public class FXMLUsersController implements Initializable {
             String value5 = txt_phone.getText();
             String value6 = txt_email.getText();
             String value7 = txt_password.getText();
-            String value8 = cmbType.getValue().toString();
             int idUser = Integer.parseInt(txt_idUser.getText()); 
 
             // Consulta para actualizar la tabla person
@@ -191,7 +184,7 @@ public class FXMLUsersController implements Initializable {
 
             // Consulta para actualizar la tabla user
             String sqlUser = "update user set email = ?, password = ?, "
-                    + "type = ? "+ "where id_user = ?";
+                    + "where id_user = ?";
 
             PreparedStatement psPerson = conn.prepareStatement(sqlPerson);
             PreparedStatement psUser = conn.prepareStatement(sqlUser);
@@ -206,7 +199,6 @@ public class FXMLUsersController implements Initializable {
             //Usurios
             psUser.setString(1, value6);
             psUser.setString(2, value7);
-            psUser.setString(3, value8);
             psUser.setInt(4, idUser); 
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -300,7 +292,6 @@ public class FXMLUsersController implements Initializable {
         txt_phone.setText(column_phone.getCellData(index).toString());
         txt_email.setText(column_correo.getCellData(index));
         txt_password.setText(column_password.getCellData(index));
-        cmbType.setValue(column_type.getCellData(index));
     }
     
     private void loadData() {
@@ -326,8 +317,6 @@ public class FXMLUsersController implements Initializable {
                 String>("email"));
         column_password.setCellValueFactory(new PropertyValueFactory<User,
                 String>("password"));
-        column_type.setCellValueFactory(new PropertyValueFactory<User,
-                String>("type"));
         users = ConnectionUserDB.getDataUser();
         tbw_users.setItems(users);
     }

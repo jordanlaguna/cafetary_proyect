@@ -104,8 +104,6 @@ public class FXMLFormDessertController implements Initializable {
                 alert.setContentText("Postre agregado con éxito.");
                 alert.showAndWait();
             }
-
-
             // Actualizar la lista en el controlador principal
             dessertController.refreshDessert();
             closeWindow();
@@ -114,7 +112,7 @@ public class FXMLFormDessertController implements Initializable {
         }
     }
 
-    // Método para modificar un café existente en la base de datos
+    // Método para modificar un postre existente en la base de datos
     private void modifyDessert() {
         String name = textFieldName.getText();
         float price = Float.parseFloat(textFieldPrice.getText());
@@ -138,10 +136,21 @@ public class FXMLFormDessertController implements Initializable {
             }
 
             ps.setInt(4, currentDessert.getId()); 
-            ps.executeUpdate();
-            System.out.println("Postre modificado correctamente.");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("CONFIRMACIÓN");
+            alert.setContentText("¿Deseas modificar los datos?");
+            Optional<ButtonType> option = alert.showAndWait();
 
-            // Actualizar la lista en el controlador principal
+            if (option.get().equals(ButtonType.OK)) {
+                ps.executeUpdate();
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("INFORMACIÓN");
+                alert.setContentText("Postre modificado con éxito.");
+                alert.showAndWait();
+            }
+             // Actualizar la lista en el controlador principal
             dessertController.refreshDessert();
             closeWindow();
         } catch (SQLException e) {

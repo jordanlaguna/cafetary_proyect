@@ -62,7 +62,7 @@ public class ConnectionUserDB {
             PreparedStatement ps = conn.prepareStatement("select "
                     + "person.id_person, "
                     + "birth_date, identification, name, lastName, secondName, "
-                    + "telephone, email, password, type, user.id_user "
+                    + "telephone, email, password, user.id_user "
                     + "from person "
                     + "inner join user on person.id_person = user.id_user");
             ResultSet rs = ps.executeQuery();
@@ -88,8 +88,7 @@ public class ConnectionUserDB {
                     rs.getString("secondName"),
                     Integer.parseInt(rs.getString("telephone")),
                     Integer.parseInt(rs.getString("id_user")),
-                    rs.getString("email"), rs.getString("password"),
-                    rs.getString("type")));
+                    rs.getString("email"), rs.getString("password")));
             addUserToList(rs, list);
         }
     }

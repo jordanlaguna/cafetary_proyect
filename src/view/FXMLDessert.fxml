@@ -35,12 +35,12 @@
                                        <children>
                                           <Label fx:id="lblName1" prefHeight="19.0" prefWidth="77.0" text="Tiramisú" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice1" prefHeight="23.0" prefWidth="54.0" text="₡ 1500">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="15.0" />
@@ -93,12 +93,12 @@
                                        <children>
                                           <Label fx:id="lblName2" prefHeight="19.0" prefWidth="61.0" text="Churros" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice2" prefHeight="23.0" prefWidth="54.0" text="₡ 1000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="35.0" />
@@ -152,7 +152,7 @@
                                        <children>
                                           <Label fx:id="lblName3" prefHeight="19.0" prefWidth="84.0" text="Flan-Caram" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets />
@@ -160,7 +160,7 @@
                                           </Label>
                                           <Label fx:id="lblPrice3" prefHeight="19.0" prefWidth="47.0" text="₡ 1000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets />
@@ -214,12 +214,12 @@
                                        <children>
                                           <Label fx:id="lblName4" text="Tar. Queso" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice4" prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="15.0" />
@@ -273,12 +273,12 @@
                                        <children>
                                           <Label fx:id="lblName5" prefHeight="19.0" prefWidth="91.0" text="Tres Leches" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice5" prefHeight="21.0" prefWidth="59.0" text="₡ 1500">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="5.0" />
@@ -332,7 +332,7 @@
                                        <children>
                                           <Label fx:id="lblName6" prefHeight="19.0" prefWidth="99.0" text="Tor. Chilena" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="10.0" />
@@ -340,7 +340,7 @@
                                           </Label>
                                           <Label fx:id="lblPrice6" prefHeight="21.0" prefWidth="61.0" text="₡ 1000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets />
@@ -391,12 +391,12 @@
                                        <children>
                                           <Label fx:id="lblName7" prefHeight="19.0" prefWidth="97.0" text="P. Zanahoria" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice7" prefHeight="19.0" prefWidth="59.0" text="₡ 1000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets />
@@ -450,12 +450,12 @@
                                        <children>
                                           <Label fx:id="lblName8" prefHeight="19.0" prefWidth="73.0" text="Brownie" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice8" prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="15.0" />
@@ -509,12 +509,12 @@
                                        <children>
                                           <Label fx:id="lblName9" prefHeight="19.0" prefWidth="107.0" text="M. Chocolate" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice9" prefHeight="21.0" prefWidth="63.0" text="₡ 1500">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets />
@@ -568,12 +568,12 @@
                                        <children>
                                           <Label fx:id="lblName10" prefHeight="19.0" prefWidth="95.0" text="P. Chocolate" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice10" prefHeight="23.0" prefWidth="54.0" text="₡ 1000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets />
@@ -627,12 +627,12 @@
                                        <children>
                                           <Label fx:id="lblName11" prefHeight="19.0" prefWidth="77.0" text="C. brûlée" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice11" prefHeight="19.0" prefWidth="53.0" text="₡ 1000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="10.0" />
@@ -686,12 +686,12 @@
                                        <children>
                                           <Label fx:id="lblName12" prefHeight="19.0" prefWidth="83.0" text="Donas" textFill="#bf1717">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lblPrice12" prefHeight="17.0" prefWidth="54.0" text="₡ 2000">
                                              <font>
-                                                <Font name="Times New Roman" size="16.0" />
+                                                <Font name="Times New Roman" size="14.0" />
                                              </font>
                                              <HBox.margin>
                                                 <Insets left="15.0" />

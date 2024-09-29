@@ -1,11 +1,21 @@
 package controller;
 
 import classes.Coffe;
+import static connectionDB.ConnectionCoffesDB.conn;
 import static connectionDB.ConnectionCoffesDB.getDataCoffe;
+import connectionDB.OrdersDB;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +29,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class FXMLCoffesController implements Initializable {
 
@@ -29,7 +44,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image1;
     @FXML
-    private Spinner<?> Spinner1;
+    private Spinner<Integer> Spinner1;
     @FXML
     private Label lblname2;
     @FXML
@@ -37,7 +52,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image2;
     @FXML
-    private Spinner<?> Spinner2;
+    private Spinner<Integer> Spinner2;
     @FXML
     private Label lblname3;
     @FXML
@@ -45,7 +60,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image3;
     @FXML
-    private Spinner<?> Spinner3;
+    private Spinner<Integer> Spinner3;
     @FXML
     private Label lblname4;
     @FXML
@@ -53,7 +68,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image4;
     @FXML
-    private Spinner<?> Spinner4;
+    private Spinner<Integer> Spinner4;
     @FXML
     private Label lblname5;
     @FXML
@@ -61,7 +76,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image5;
     @FXML
-    private Spinner<?> Spinner5;
+    private Spinner<Integer> Spinner5;
     @FXML
     private Label lblname6;
     @FXML
@@ -69,7 +84,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image6;
     @FXML
-    private Spinner<?> Spinner6;
+    private Spinner<Integer> Spinner6;
     @FXML
     private Label lblname7;
     @FXML
@@ -77,7 +92,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image7;
     @FXML
-    private Spinner<?> Spinner7;
+    private Spinner<Integer> Spinner7;
     @FXML
     private Label lblname8;
     @FXML
@@ -85,7 +100,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image8;
     @FXML
-    private Spinner<?> Spinner8;
+    private Spinner<Integer> Spinner8;
     @FXML
     private Label lblname9;
     @FXML
@@ -93,7 +108,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image9;
     @FXML
-    private Spinner<?> Spinner9;
+    private Spinner<Integer> Spinner9;
     @FXML
     private Label lblname10;
     @FXML
@@ -101,7 +116,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image10;
     @FXML
-    private Spinner<?> Spinner10;
+    private Spinner<Integer> Spinner10;
     @FXML
     private Label lblname11;
     @FXML
@@ -109,7 +124,7 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image11;
     @FXML
-    private Spinner<?> Spinner11;
+    private Spinner<Integer> Spinner11;
     @FXML
     private Label lblname12;
     @FXML
@@ -117,7 +132,44 @@ public class FXMLCoffesController implements Initializable {
     @FXML
     private StackPane image12;
     @FXML
-    private Spinner<?> Spinner12;
+    private Spinner<Integer> Spinner12;
+    @FXML
+    private TableView<OrderItem> coffeeTable;
+    @FXML
+    private TableColumn<OrderItem, Double> columnPrice;
+    @FXML
+    private TableColumn<OrderItem, String> columnName;
+    @FXML
+    private TableColumn<OrderItem, Integer> columnQuantity;
+    @FXML
+    private Label lblTotal;
+    @FXML
+    private Button btn1;
+    @FXML
+    private Button btn2;
+    @FXML
+    private Button btn3;
+    @FXML
+    private Button btn4;
+    @FXML
+    private Button btn5;
+    @FXML
+    private Button btn6;
+    @FXML
+    private Button btn7;
+    @FXML
+    private Button btn8;
+    @FXML
+    private Button btn9;
+    @FXML
+    private Button btn10;
+    @FXML
+    private Button btn11;
+    @FXML
+    private Button btn12;
+
+    private ObservableList<OrderItem> orderItems;
+    private double totalAmount = 0.0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -126,9 +178,15 @@ public class FXMLCoffesController implements Initializable {
 
         // Asignar manejadores de clic a las imágenes para abrir el formulario de agregar café
         assignClickHandlers();
+        configureSpinner();
+        columnName.setCellValueFactory(new PropertyValueFactory<>("product_name"));
+        columnQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        columnPrice.setCellValueFactory(new PropertyValueFactory<>("total_amount"));
+        orderItems = FXCollections.observableArrayList();
+        coffeeTable.setItems(orderItems);
+
     }
 
- 
     // Método para llenar los espacios vacíos con imágenes y etiquetas por defecto
     private void fillEmptySpaces() {
         if (lblname1.getText().isEmpty()) {
@@ -306,9 +364,10 @@ public class FXMLCoffesController implements Initializable {
     }
 
     // Método auxiliar para asignar café a etiquetas e imagenes
-    private void assignCoffeToLabelAndImage(Coffe coffee, Label nameLabel, Label priceLabel, StackPane imagePane) {
+    private void assignCoffeToLabelAndImage(Coffe coffee, Label nameLabel,
+            Label priceLabel, StackPane imagePane) {
         nameLabel.setText(coffee.getName());
-        priceLabel.setText(""+coffee.getPrice());
+        priceLabel.setText("" + coffee.getPrice());
         ImageView imageView = new ImageView(new Image(new File(coffee.getImage()).toURI().toString()));
         imageView.setFitWidth(110);
         imageView.setFitHeight(110);
@@ -317,6 +376,237 @@ public class FXMLCoffesController implements Initializable {
 
     @FXML
     private void btn_add(ActionEvent event) {
-        // Lógica para agregar un nuevo café
+        // Lógica para enviar el pedido a la tabla principal
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection conn = null;
+        conn = OrdersDB.OrdersConn();
+
+        for (OrderItem orderItem : orderItems) {
+            String sql = "insert into orders (product_name, quantity, unit_price, "
+                    + "total_amount) values (?,?,?,?)";
+            try {
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, orderItem.getProduct_name());
+                ps.setInt(2, orderItem.getQuantity());
+                double price = orderItem.getTotal_amount()
+                        / orderItem.getQuantity();
+                ps.setDouble(3, price);
+                ps.setDouble(4, orderItem.getTotal_amount());
+                ps.executeUpdate();
+            } catch (SQLException ex) {
+                System.out.println("" + ex);
+            }
+        }
+
+    }
+
+    private void configureSpinner() {
+        Spinner1.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner2.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner3.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner4.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner5.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner6.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner7.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner8.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner9.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner10.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner11.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+        Spinner12.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 1));
+
+    }
+
+    private void addCoffeTableOrder(Button clickedButton) {
+        String product_name = "";
+        int quantity = 0;
+        double unit_price = 0.0;
+        if (clickedButton == btn1) {
+            product_name = lblname1.getText();
+            quantity = Spinner1.getValue();
+            unit_price = Double.parseDouble(lblprice1.getText());
+        } else if (clickedButton == btn2) {
+            product_name = lblname2.getText();
+            quantity = Spinner2.getValue();
+            unit_price = Double.parseDouble(lblprice2.getText());
+        } else if (clickedButton == btn3) {
+            product_name = lblname3.getText();
+            quantity = Spinner3.getValue();
+            unit_price = Double.parseDouble(lblprice3.getText());
+        } else if (clickedButton == btn4) {
+            product_name = lblname4.getText();
+            quantity = Spinner4.getValue();
+            unit_price = Double.parseDouble(lblprice4.getText());
+        } else if (clickedButton == btn5) {
+            product_name = lblname5.getText();
+            quantity = Spinner5.getValue();
+            unit_price = Double.parseDouble(lblprice5.getText());
+        } else if (clickedButton == btn6) {
+            product_name = lblname6.getText();
+            quantity = Spinner6.getValue();
+            unit_price = Double.parseDouble(lblprice6.getText());
+        } else if (clickedButton == btn7) {
+            product_name = lblname7.getText();
+            quantity = Spinner7.getValue();
+            unit_price = Double.parseDouble(lblprice7.getText());
+        } else if (clickedButton == btn8) {
+            product_name = lblname8.getText();
+            quantity = Spinner8.getValue();
+            unit_price = Double.parseDouble(lblprice8.getText());
+        } else if (clickedButton == btn9) {
+            product_name = lblname9.getText();
+            quantity = Spinner9.getValue();
+            unit_price = Double.parseDouble(lblprice9.getText());
+        } else if (clickedButton == btn10) {
+            product_name = lblname10.getText();
+            quantity = Spinner10.getValue();
+            unit_price = Double.parseDouble(lblprice10.getText());
+        } else if (clickedButton == btn11) {
+            product_name = lblname11.getText();
+            quantity = Spinner11.getValue();
+            unit_price = Double.parseDouble(lblprice11.getText());
+        } else if (clickedButton == btn12) {
+            product_name = lblname12.getText();
+            quantity = Spinner12.getValue();
+            unit_price = Double.parseDouble(lblprice12.getText());
+        }
+
+        double total_amount = unit_price * quantity;
+        orderItems.add(new OrderItem(product_name, quantity, total_amount));
+
+        totalAmount += total_amount;
+
+        lblTotal.setText(String.format("₡ %.2f", totalAmount));
+
+        coffeeTable.refresh();
+
+    }
+
+    @FXML
+    private void addCoffeTable1(ActionEvent event) {
+        addCoffeTableOrder(btn1);
+    }
+
+    @FXML
+    private void addCoffeTable2(ActionEvent event) {
+        addCoffeTableOrder(btn2);
+    }
+
+    @FXML
+    private void addCoffeTable3(ActionEvent event) {
+        addCoffeTableOrder(btn3);
+    }
+
+    @FXML
+    private void btnCancel(ActionEvent event) {
+        for (int i = 0; i < coffeeTable.getItems().size(); i++) {
+            coffeeTable.getItems().clear();
+        }
+        lblTotal.setText("");
+    }
+
+    @FXML
+    private void addCoffeTable4(ActionEvent event) {
+        addCoffeTableOrder(btn4);
+    }
+
+    @FXML
+    private void addCoffeTable5(ActionEvent event) {
+        addCoffeTableOrder(btn5);
+    }
+
+    @FXML
+    private void addCoffeTable6(ActionEvent event) {
+        addCoffeTableOrder(btn6);
+    }
+
+    @FXML
+    private void addCoffeTable7(ActionEvent event) {
+        addCoffeTableOrder(btn7);
+    }
+
+    @FXML
+    private void addCoffeTable8(ActionEvent event) {
+        addCoffeTableOrder(btn8);
+    }
+
+    @FXML
+    private void addCoffeTable9(ActionEvent event) {
+        addCoffeTableOrder(btn9);
+    }
+
+    @FXML
+    private void addCoffeTable10(ActionEvent event) {
+        addCoffeTableOrder(btn10);
+    }
+
+    @FXML
+    private void addCoffeTable11(ActionEvent event) {
+        addCoffeTableOrder(btn11);
+    }
+
+    @FXML
+    private void addCoffeTable12(ActionEvent event) {
+        addCoffeTableOrder(btn12);
+    }
+
+    public static class OrderItem {
+
+        private final SimpleStringProperty product_name;
+        private final SimpleIntegerProperty quantity;
+        private final SimpleDoubleProperty total_amount;
+        private SimpleIntegerProperty id_order;
+        private SimpleDoubleProperty unit_price;
+        private SimpleStringProperty observations;
+        private SimpleIntegerProperty code_product;
+
+        public OrderItem(String product_name, int quantity,
+                double total_amount) {
+            this.product_name = new SimpleStringProperty(product_name);
+            this.quantity = new SimpleIntegerProperty(quantity);
+            this.total_amount = new SimpleDoubleProperty(total_amount);
+        }
+
+        public OrderItem(int id_order, int code_product, String product_name, 
+                int quantity, String observations, double unit_price, 
+                double total_amount) {
+            this.id_order = new SimpleIntegerProperty(id_order);
+            this.code_product = new SimpleIntegerProperty(code_product);
+            this.product_name = new SimpleStringProperty(product_name);
+            this.quantity = new SimpleIntegerProperty(quantity);
+            this.observations = new SimpleStringProperty(observations);
+            this.unit_price = new SimpleDoubleProperty(unit_price);
+            this.total_amount = new SimpleDoubleProperty(total_amount);
+        
+          
+           
+            
+        }
+
+        public String getProduct_name() {
+            return product_name.get();
+        }
+
+        public int getQuantity() {
+            return quantity.get();
+        }
+
+        public double getTotal_amount() {
+            return total_amount.get();
+        }
+
+        public int getId_order() {
+            return id_order.get();
+        }
+
+        public double getUnit_price() {
+            return unit_price.get();
+        }
+        public int getCode_product(){
+            return code_product.get();
+        }
+        public String getObservations(){
+            return observations.get();
+        }
     }
 }
