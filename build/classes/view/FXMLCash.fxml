@@ -64,7 +64,7 @@
                               <AnchorPane prefHeight="129.0" prefWidth="366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <TextField fx:id="txt_quantity" editable="false" layoutX="119.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="20.0" prefWidth="215.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="32.0" />
-                                    <TextField fx:id="txt_observ" editable="false" layoutX="119.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="215.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="32.0" />
+                                    <TextField fx:id="txt_observ" layoutX="119.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="215.0" promptText="Ingrese observación" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="32.0" />
                                     <Label layoutX="17.0" layoutY="64.0" text="Obervación:" AnchorPane.leftAnchor="16.0">
                                        <font>
                                           <Font name="Times New Roman" size="18.0" />
@@ -75,7 +75,7 @@
                                           <Font name="Times New Roman" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txt_descripcion" layoutX="119.0" layoutY="-6.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="215.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="-6.0" />
+                                    <TextField fx:id="txt_descripcion" editable="false" layoutX="119.0" layoutY="-6.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="215.0" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="-6.0" />
                                     <Label layoutX="16.0" layoutY="111.0" text="Cantidad:" AnchorPane.leftAnchor="16.0">
                                        <font>
                                           <Font name="Times New Roman" size="18.0" />
@@ -103,9 +103,9 @@
                               <TableColumn fx:id="column_id" prefWidth="31.0" text="N°" visible="false" />
                               <TableColumn fx:id="column_cod" prefWidth="116.0" text="Código" />
                               <TableColumn fx:id="column_name" prefWidth="121.0" text="Descripción" />
-                              <TableColumn fx:id="column_price" prefWidth="114.0" text="Precio" />
-                              <TableColumn fx:id="column_quantity" prefWidth="108.0" text="Cantidad" />
-                              <TableColumn fx:id="column_observations" minWidth="0.0" prefWidth="119.0" text="Observación" />
+                              <TableColumn fx:id="column_observations" prefWidth="114.0" text="Observación" />
+                              <TableColumn fx:id="column_price" prefWidth="108.0" text="Precio (₡ )" />
+                              <TableColumn fx:id="column_quantity" minWidth="0.0" prefWidth="119.0" text="Cantidad" />
                               <TableColumn fx:id="column_totalAmount" minWidth="100.0" prefWidth="178.0" text="Precio Total (₡ )" />
                            </columns>
                            <columnResizePolicy>

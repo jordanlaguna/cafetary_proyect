@@ -7,6 +7,7 @@ package controller;
 
 import connectionDB.OrdersDB;
 import controller.FXMLCoffesController.OrderItem;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,12 +18,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -50,7 +56,7 @@ public class FXMLCashController implements Initializable {
     @FXML
     private TableView<OrderItem> tbw_order;
     @FXML
-    private TableColumn<OrderItem, Integer> column_cod;
+    private TableColumn<OrderItem, String> column_cod;
     @FXML
     private TableColumn<OrderItem, String> column_name;
     @FXML
@@ -93,10 +99,37 @@ public class FXMLCashController implements Initializable {
 
     @FXML
     private void btn_add(ActionEvent event) {
+        conn = OrdersDB.OrdersConn();
+        String sql = "Insert into orders (code_product, observations) "
+                + "values (?,?)";
+        try{
+        ps = conn.prepareStatement(sql);
+        int value1 = Integer.parseInt(txt_cod.getText());
+        String value2 = txt_observ.getText();
+        ps.setInt(1, value1);
+        ps.setString(2, value2);
+        ps.executeUpdate();
+        
+        } catch (SQLException ex){
+            System.out.println(""+ex);
+        }
     }
 
     @FXML
     private void btn_pay(ActionEvent event) {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/"
+                    + "FXMLFormPay.fxml"));
+            Parent root = loader.load();
+            
+            Stage stage = new Stage();
+            stage.setTitle("Formulario de pago");
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex){
+            System.out.println("" +ex);
+        }
     }
 
     @FXML
@@ -112,15 +145,15 @@ public class FXMLCashController implements Initializable {
         column_id.setCellValueFactory(new PropertyValueFactory<OrderItem, 
                 Integer> ("id_order"));
         column_cod.setCellValueFactory(new PropertyValueFactory<OrderItem, 
-                Integer>("code_product"));
+                String>("code_product"));
         column_name.setCellValueFactory(new PropertyValueFactory<OrderItem, 
                 String>("product_name"));
+        column_observations.setCellValueFactory(new PropertyValueFactory<OrderItem, 
+                String>("observations"));
         column_price.setCellValueFactory(new PropertyValueFactory<OrderItem, 
                 Double> ("unit_price"));
         column_quantity.setCellValueFactory(new PropertyValueFactory<OrderItem, 
                 Integer>("quantity"));
-        column_observations.setCellValueFactory(new PropertyValueFactory<OrderItem, 
-                String>("observations"));
         column_totalAmount.setCellValueFactory(new PropertyValueFactory<OrderItem, 
                 Double>("total_amount"));
         orders = OrdersDB.getDataOrder();

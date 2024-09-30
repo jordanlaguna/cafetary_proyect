@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="420.0" prefWidth="600.0" styleClass="contaClient" stylesheets="@../styles/GeneralStyleSheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLFormPayController">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="9.0" prefHeight="400.0" prefWidth="586.0" styleClass="PaneForm" stylesheets="@../styles/PanesStyleSheet.css">
+         <children>
+            <TextField fx:id="textFieldTotal" layoutX="241.0" layoutY="133.0" promptText="Monto a cobrar" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" />
+            <Label layoutX="75.0" layoutY="139.0" text="Monto a cobrar:">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Label layoutX="81.0" layoutY="84.0" text="Ingresar nombre:">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="192.0" layoutY="14.0" text="Formulario Pago" textFill="#008f39">
+         <font>
+            <Font name="Times New Roman" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="210.0" text="Ingresar monto:">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldName" layoutX="248.0" layoutY="75.0" promptText="Ingrese nombre" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" />
+      <TextField fx:id="textFieldPay" layoutX="247.0" layoutY="204.0" promptText="Ingresar monto" styleClass="text1" stylesheets="@../styles/GeneralStyleSheet.css" />
+      <Button fx:id="btnPay" layoutX="140.0" layoutY="327.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="141.0" styleClass="btnAddCoffe" stylesheets="@../styles/GeneralStyleSheet.css" text="Pagar" />
+      <Button fx:id="btnCancel" layoutX="326.0" layoutY="327.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="141.0" styleClass="btnBills" stylesheets="@../styles/GeneralStyleSheet.css" text="Cancelar" />
+   </children>
+</AnchorPane>

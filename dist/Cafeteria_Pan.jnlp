@@ -8,7 +8,13 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Cafeteria_Pan.jar" size="3145697" download="eager" />
+    <jar href="Cafeteria_Pan.jar" size="3150931" download="eager" />
+    <jar href="lib\commons-collections4-4.2.jar" size="752798" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib\commons-logging-1.1.1.jar" size="60686" download="eager" />
+    <jar href="lib\itext-2.1.7.js10.jar" size="1131573" download="eager" />
+    <jar href="lib\jasperreports-6.20.0.jar" size="5641898" download="eager" />
+    <jar href="lib\jcommon-1.0.23.jar" size="330246" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.29.jar" size="2519547" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Cafeteria_Pan" >

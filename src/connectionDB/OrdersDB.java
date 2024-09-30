@@ -64,8 +64,8 @@ public class OrdersDB {
 
             while (rs.next()) {
                 list.add(new OrderItem(Integer.parseInt(rs.getString(
-                        "id_order")), Integer.parseInt(rs.getString(
-                        "code_product")),rs.getString("product_name"), 
+                        "id_order")), rs.getString(
+                        "code_product"),rs.getString("product_name"), 
                         Integer.parseInt(rs.getString("quantity")), 
                         rs.getString("observations"),Double.parseDouble(rs.
                         getString("unit_price")),Double.parseDouble(rs.

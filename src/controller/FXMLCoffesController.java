@@ -1,7 +1,6 @@
 package controller;
 
 import classes.Coffe;
-import static connectionDB.ConnectionCoffesDB.conn;
 import static connectionDB.ConnectionCoffesDB.getDataCoffe;
 import connectionDB.OrdersDB;
 import java.io.File;
@@ -34,6 +33,7 @@ import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.StageStyle;
 
 public class FXMLCoffesController implements Initializable {
 
@@ -256,10 +256,10 @@ public class FXMLCoffesController implements Initializable {
     }
 
     // Método para abrir el formulario para agregar un nuevo café en los espacios vacíos
-    // Método para abrir el formulario para agregar un nuevo café en los espacios vacíos
     private void openFormEmptySlot() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLForm.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/"
+                    + "FXMLForm.fxml"));
             Parent root = loader.load();
 
             FXMLFormController formController = loader.getController();
@@ -267,9 +267,9 @@ public class FXMLCoffesController implements Initializable {
             // Pasar el controlador principal para refrescar la lista al agregar café
             formController.setCoffesController(this);
 
-            // Crear y mostrar la nueva ventana
             Stage stage = new Stage();
             stage.setTitle("Agregar Café");
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
@@ -368,7 +368,8 @@ public class FXMLCoffesController implements Initializable {
             Label priceLabel, StackPane imagePane) {
         nameLabel.setText(coffee.getName());
         priceLabel.setText("" + coffee.getPrice());
-        ImageView imageView = new ImageView(new Image(new File(coffee.getImage()).toURI().toString()));
+        ImageView imageView = new ImageView(new Image(new File(coffee.
+                getImage()).toURI().toString()));
         imageView.setFitWidth(110);
         imageView.setFitHeight(110);
         imagePane.getChildren().add(imageView);
@@ -376,23 +377,28 @@ public class FXMLCoffesController implements Initializable {
 
     @FXML
     private void btn_add(ActionEvent event) {
-        // Lógica para enviar el pedido a la tabla principal
+        // To Do
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection conn = null;
         conn = OrdersDB.OrdersConn();
+        String code_product = "####";
+        String observations = "Ninguna";
 
         for (OrderItem orderItem : orderItems) {
-            String sql = "insert into orders (product_name, quantity, unit_price, "
-                    + "total_amount) values (?,?,?,?)";
+            String sql = "insert into orders (code_product, product_name,"
+                    + "unit_price, quantity, observations, total_amount) values "
+                    + "(?,?,?,?,?,?)";
             try {
                 ps = conn.prepareStatement(sql);
-                ps.setString(1, orderItem.getProduct_name());
-                ps.setInt(2, orderItem.getQuantity());
+                ps.setString(1, code_product);
+                ps.setString(2, orderItem.getProduct_name());
+                ps.setInt(4, orderItem.getQuantity());
                 double price = orderItem.getTotal_amount()
                         / orderItem.getQuantity();
                 ps.setDouble(3, price);
-                ps.setDouble(4, orderItem.getTotal_amount());
+                ps.setDouble(6, orderItem.getTotal_amount());
+                ps.setString(5, observations);
                 ps.executeUpdate();
             } catch (SQLException ex) {
                 System.out.println("" + ex);
@@ -499,10 +505,9 @@ public class FXMLCoffesController implements Initializable {
 
     @FXML
     private void btnCancel(ActionEvent event) {
-        for (int i = 0; i < coffeeTable.getItems().size(); i++) {
-            coffeeTable.getItems().clear();
-        }
-        lblTotal.setText("");
+        coffeeTable.getItems().clear();
+        totalAmount = 0.0;
+        lblTotal.setText(String.format("₡ %.2f", totalAmount));
     }
 
     @FXML
@@ -558,7 +563,7 @@ public class FXMLCoffesController implements Initializable {
         private SimpleIntegerProperty id_order;
         private SimpleDoubleProperty unit_price;
         private SimpleStringProperty observations;
-        private SimpleIntegerProperty code_product;
+        private SimpleStringProperty code_product;
 
         public OrderItem(String product_name, int quantity,
                 double total_amount) {
@@ -567,11 +572,11 @@ public class FXMLCoffesController implements Initializable {
             this.total_amount = new SimpleDoubleProperty(total_amount);
         }
 
-        public OrderItem(int id_order, int code_product, String product_name, 
+        public OrderItem(int id_order, String code_product, String product_name, 
                 int quantity, String observations, double unit_price, 
                 double total_amount) {
             this.id_order = new SimpleIntegerProperty(id_order);
-            this.code_product = new SimpleIntegerProperty(code_product);
+            this.code_product = new SimpleStringProperty(code_product);
             this.product_name = new SimpleStringProperty(product_name);
             this.quantity = new SimpleIntegerProperty(quantity);
             this.observations = new SimpleStringProperty(observations);
@@ -602,7 +607,7 @@ public class FXMLCoffesController implements Initializable {
         public double getUnit_price() {
             return unit_price.get();
         }
-        public int getCode_product(){
+        public String getCode_product(){
             return code_product.get();
         }
         public String getObservations(){
